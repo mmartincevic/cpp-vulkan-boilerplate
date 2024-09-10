@@ -1,7 +1,7 @@
 A C++ project template for Vulkan (GLFW + GLM + OpenGL) projects that builds on Linux, Mac, and Windows using CMake.
 
 GLFW, and GLM are automatically downloaded from GitHub and compiled (in case of GLFW). There's no need to install any other libraries.
-
+I optimised mostly for visual studio.
 
 After cloning repository, run:
 
