@@ -1,0 +1,25 @@
+include(ExternalProject)
+
+set(GLFW_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/external/glfw)
+
+ExternalProject_Add(GLFW_external
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG 3.3.8
+    GIT_SHALLOW ON
+    UPDATE_COMMAND ""
+    CMAKE_ARGS
+        -DCMAKE_INSTALL_PREFIX=${GLFW_INSTALL_PREFIX}
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        -DGLFW_BUILD_EXAMPLES=OFF
+        -DGLFW_BUILD_TESTS=OFF
+        -DGLFW_BUILD_DOCS=OFF
+    TEST_AFTER_INSTALL OFF
+    DOWNLOAD_NO_PROGRESS ON
+    LOG_CONFIGURE ON
+    LOG_BUILD ON
+    LOG_INSTALL ON
+)
+
+# Set variables to be used in the main CMakeLists.txt
+set(GLFW_INCLUDE_DIR ${GLFW_INSTALL_PREFIX}/include PARENT_SCOPE)
+set(GLFW_LIB_DIR ${GLFW_INSTALL_PREFIX}/lib PARENT_SCOPE)
