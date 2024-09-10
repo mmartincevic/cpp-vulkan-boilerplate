@@ -22,3 +22,9 @@ If you want to cleanup everything
 ```
 
 Tested on Windows so if any errors please write or contribute.
+
+
+TODO:
+
+	- Add GLEW
+	- Cleanup
